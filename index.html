@@ -83,11 +83,24 @@
       script.onload = () => {
         createUnityInstance(canvas, config, (progress) => {
           progressBarFull.style.width = 100 * progress + "%";
-        }).then((unityInstance) => {
+        }).then((unityInstance) => 
+        {
           loadingBar.style.display = "none";
           fullscreenButton.onclick = () => {
             unityInstance.SetFullscreen(1);
           };
+          
+          const audio = new Audio('Beyond_the_sky.mp3');
+
+          document.getElementById( 'testButton' ).onclick = 
+          function()
+          {
+            console.log( "ボタンクリックのテスト" );
+            audio.play();
+
+            unityInstance.SendMessage('LocationManager', 'Function');
+          };
+
         }).catch((message) => {
           alert(message);
         });
@@ -95,16 +108,16 @@
       document.body.appendChild(script);
 
 
-      const audio = new Audio('Beyond_the_sky.mp3');
+      // const audio = new Audio('Beyond_the_sky.mp3');
 
-      document.getElementById( 'testButton' ).onclick = 
-      function()
-      {
-        console.log( "ボタンクリックのテスト" );
-        audio.play();
+      // document.getElementById( 'testButton' ).onclick = 
+      // function()
+      // {
+      //   console.log( "ボタンクリックのテスト" );
+      //   audio.play();
 
-        unityInstance.SendMessage('LocationManager', 'Function');
-      };
+      //   unityInstance.SendMessage('LocationManager', 'Function');
+      // };
     </script>
   </body>
 </html>
