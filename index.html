@@ -11,7 +11,7 @@
   <body>
     
     <!-- <div id="test"><input type="submit" value="ボタン" class="example2"></div> -->
-    <div id="test"><button class="example2">ボタン..aaa</button></div>
+    <div id="test"><button class="example2" id="testButton">ボタン..aaa</button></div>
 
     <div id="unity-container" class="unity-desktop">
       <canvas id="unity-canvas" width=960 height=600></canvas>
@@ -89,11 +89,15 @@
       };
       document.body.appendChild(script);
 
-      // document.getElementById( 'testButton' ).onclick = 
-      // function()
-      // {
-      //   console.log( "ボタンクリックのテスト" );
-      // };
+
+      const audio = new Audio('Beyond_the_sky.mp3');
+
+      document.getElementById( 'testButton' ).onclick = 
+      function()
+      {
+        console.log( "ボタンクリックのテスト" );
+        audio.play();
+      };
     </script>
   </body>
 </html>
