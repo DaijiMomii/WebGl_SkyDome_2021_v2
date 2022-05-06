@@ -11,8 +11,10 @@
   <body>
     <div id="unity-container" class="unity-desktop">
       <canvas id="unity-canvas" width=960 height=600></canvas>
+      <!-- <p><button id="testNButton">Normalボタン</button></p> -->
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
+        <p><button id="testNButton">Normalボタン</button></p>
         <div id="unity-progress-bar-empty">
           <div id="unity-progress-bar-full"></div>
         </div>
@@ -24,7 +26,7 @@
         <div id="unity-webgl-logo"></div>
         <div id="unity-fullscreen-button"></div>
         <div id="unity-build-title">WebGl_SkyDome_2021</div>
-        <p><button id="testButton">ボタンテスト1</button></p>
+        <p><button id="testFButton">Footボタン</button></p>
       </div>
     </div>
 
@@ -86,10 +88,15 @@
       };
       document.body.appendChild(script);
 
-      document.getElementById( 'testButton' ).onclick = 
+      document.getElementById( 'testNButton' ).onclick = 
       function()
       {
-        console.log( "ボタンクリックのテスト" );
+        console.log( "Normalボタンクリックのテスト" );
+      };
+      document.getElementById( 'testFButton' ).onclick = 
+      function()
+      {
+        console.log( "Footボタンクリックのテスト" );
       };
     </script>
   </body>
